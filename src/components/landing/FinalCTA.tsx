@@ -12,13 +12,13 @@ export default function FinalCTA() {
         {/* Badge */}
         <span
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/[0.28] mb-8 font-mono text-xs text-primary"
-          style={{ background: "hsl(211 100% 61% / 0.08)" }}
-        >
+          style={{ background: "hsl(211 100% 61% / 0.08)" }}>
+
           ✦ FREE · NO CREDIT CARD · START TODAY
         </span>
 
-        <h2 className="font-display font-extrabold text-[48px] md:text-[76px] text-foreground leading-[1.0] mb-6">
-          Stop collecting degrees.
+        <h2 className="font-display text-[48px] text-foreground leading-[1.0] mb-6 font-bold md:text-7xl">Start building your
+Workmark.
           <br />
           Start building your
           <br />
@@ -39,6 +39,6 @@ export default function FinalCTA() {
           No credit card required · No resume needed · Just your work
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 }
