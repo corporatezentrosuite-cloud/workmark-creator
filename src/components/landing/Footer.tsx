@@ -1,4 +1,9 @@
+import { useTheme } from "@/hooks/useTheme";
+import { Sun, Moon } from "lucide-react";
+
 export default function Footer() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <footer className="border-t border-primary/[0.07] pt-20 pb-12">
       <div className="container">
@@ -43,9 +48,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-foreground/[0.06] pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
+        <div className="border-t border-foreground/[0.06] pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-text-ghost text-[13px] font-body">© 2025 Zentro Workmark. All rights reserved.</p>
-          <div className="flex gap-4">
+
+          <div className="flex items-center gap-4">
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-foreground/[0.04] hover:bg-primary/[0.1] transition-colors text-text-muted hover:text-foreground"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
+              <span className="text-xs font-body">{theme === "dark" ? "Light" : "Dark"}</span>
+            </button>
+
             {["Privacy", "Terms", "Contact"].map((l) => (
               <a key={l} href="#" className="text-text-ghost text-[13px] font-body hover:text-text-muted transition-colors">{l}</a>
             ))}
