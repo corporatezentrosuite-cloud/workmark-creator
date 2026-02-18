@@ -1,4 +1,5 @@
 import { useScrollReveal } from "./useScrollReveal";
+import GlowCard from "./GlowCard";
 
 export default function ForUniversities() {
   const ref = useScrollReveal();
@@ -6,7 +7,7 @@ export default function ForUniversities() {
   return (
     <section id="for-universities" className="relative section-padding bg-surface-1">
       <div ref={ref} className="container relative z-10 [&:not(.revealed)]:opacity-0 [&.revealed]:animate-[fade-in_0.5s_ease-out_forwards]">
-        <div className="zentro-card zentro-card-accent p-8 md:p-12 max-w-4xl mx-auto">
+        <GlowCard accent="zentro-card-accent" className="p-8 md:p-12 max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <span className="eyebrow text-primary mb-4 block">FOR INSTITUTIONS</span>
@@ -28,7 +29,7 @@ export default function ForUniversities() {
               ))}
             </div>
           </div>
-        </div>
+        </GlowCard>
       </div>
     </section>
   );

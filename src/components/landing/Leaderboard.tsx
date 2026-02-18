@@ -1,4 +1,5 @@
 import { useScrollReveal } from "./useScrollReveal";
+import GlowCard from "./GlowCard";
 
 const leaderboardRows = [
   { badge: "🥇", name: "Riya M.", dept: "Design", pts: "1,240", trend: "↑ +3", trendColor: "text-success" },
@@ -25,7 +26,7 @@ export default function Leaderboard() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Leaderboard card */}
-          <div className="zentro-card p-6">
+          <GlowCard className="p-6">
             <div className="flex items-center gap-2 mb-6">
               <span>🏆</span>
               <span className="text-foreground font-display font-bold text-lg">Innovation Leaderboard</span>
@@ -55,11 +56,11 @@ export default function Leaderboard() {
             </div>
 
             <a href="#" className="block mt-4 text-sm text-primary text-right hover:underline">View Full Leaderboard →</a>
-          </div>
+          </GlowCard>
 
           {/* Score explanation */}
           <div className="space-y-6">
-            <div className="zentro-card p-6">
+            <GlowCard className="p-6">
               <h3 className="font-display font-bold text-lg text-foreground mb-4">⚡ Innovation Score</h3>
               <p className="text-sm text-text-secondary mb-3">Measures your innovation activity</p>
               <div className="space-y-2">
@@ -67,9 +68,9 @@ export default function Leaderboard() {
                   <p key={item} className="text-sm text-text-secondary"><span className="text-primary mr-2">→</span>{item}</p>
                 ))}
               </div>
-            </div>
+            </GlowCard>
 
-            <div className="zentro-card p-6">
+            <GlowCard className="p-6">
               <h3 className="font-display font-bold text-lg text-foreground mb-4">🎯 Industry Readiness %</h3>
               <p className="text-sm text-text-secondary mb-3">Measures your real-world preparedness</p>
               <div className="space-y-2">
@@ -77,7 +78,7 @@ export default function Leaderboard() {
                   <p key={item} className="text-sm text-text-secondary"><span className="text-success mr-2">→</span>{item}</p>
                 ))}
               </div>
-            </div>
+            </GlowCard>
 
             <p className="font-body italic text-text-muted text-[15px]">
               Your scores update in real time. Every action moves your rank. Every week is a new chance to climb.

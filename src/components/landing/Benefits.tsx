@@ -1,4 +1,5 @@
 import { useScrollReveal } from "./useScrollReveal";
+import GlowCard from "./GlowCard";
 
 const benefits = [
   {
@@ -56,12 +57,12 @@ export default function Benefits() {
 
         <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {benefits.map((b) => (
-            <div key={b.title} className={`zentro-card ${b.accent} p-7`}>
+            <GlowCard key={b.title} accent={b.accent} className="p-7">
               <div className={`w-12 h-12 rounded-full ${b.iconBg} flex items-center justify-center text-2xl mb-4`}>{b.icon}</div>
               <h3 className="font-display font-bold text-xl text-foreground mb-3">{b.title}</h3>
               <p className="font-body text-text-secondary text-[15px] leading-relaxed mb-4">{b.body}</p>
               <span className={`inline-block px-3 py-1.5 rounded-full text-xs font-mono border ${b.chipColor}`}>{b.chip}</span>
-            </div>
+            </GlowCard>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useScrollReveal } from "./useScrollReveal";
+import GlowCard from "./GlowCard";
 
 export default function ActivityFeed() {
   const ref = useScrollReveal();
@@ -22,7 +23,7 @@ export default function ActivityFeed() {
           {/* Feed */}
           <div className="space-y-4">
             {/* Post 1 */}
-            <div className="zentro-card p-6">
+            <GlowCard className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-display text-primary text-xs font-bold">SK</div>
                 <div>
@@ -44,17 +45,17 @@ export default function ActivityFeed() {
                 <span>🔀 Use as Reference</span>
                 <span>🔖 Save</span>
               </div>
-            </div>
+            </GlowCard>
 
             {/* Post 2 — challenge */}
-            <div className="zentro-card p-6 border-warning/[0.15]">
+            <GlowCard className="p-6 border-warning/[0.15]">
               <p className="text-warning text-sm font-display font-bold mb-2">📢 New Challenge Posted</p>
               <p className="text-foreground font-medium mb-1">Smart Campus AI Solutions</p>
               <p className="text-xs text-text-muted mb-3">Deadline: 48 hours · Prize: ₹50,000 · Posted by Industry Partner</p>
               <button className="px-4 py-2 text-xs font-display font-semibold text-warning bg-warning/10 border border-warning/20 rounded-lg hover:bg-warning/20 transition-colors">
                 Submit Idea →
               </button>
-            </div>
+            </GlowCard>
 
             {/* Fade out post */}
             <div className="zentro-card p-6 opacity-30">
@@ -72,7 +73,7 @@ export default function ActivityFeed() {
 
           {/* Sidebar */}
           <div className="hidden md:block space-y-6">
-            <div className="zentro-card p-5">
+            <GlowCard className="p-5">
               <p className="text-foreground text-sm font-display font-bold mb-3">🔥 Trending Topics</p>
               {[["System Design", 14], ["Sustainability Tech", 9], ["AI in Healthcare", 7]].map(([topic, count], i) => (
                 <div key={topic as string} className="flex items-center gap-2 py-1.5">
@@ -81,13 +82,13 @@ export default function ActivityFeed() {
                   <span className="text-text-muted text-xs">{count as number} posts</span>
                 </div>
               ))}
-            </div>
+            </GlowCard>
 
-            <div className="zentro-card p-5">
+            <GlowCard className="p-5">
               <p className="text-foreground text-sm font-display font-bold mb-3">👁 Eyes on Your Work</p>
               <p className="text-text-secondary text-sm">IntelliCampus Project</p>
               <p className="font-mono text-accent text-lg font-bold">49 views this week</p>
-            </div>
+            </GlowCard>
           </div>
         </div>
       </div>

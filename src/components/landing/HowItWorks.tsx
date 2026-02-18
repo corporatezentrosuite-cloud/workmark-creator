@@ -1,5 +1,6 @@
 import { useScrollReveal } from "./useScrollReveal";
 import { useCountUp } from "./useCountUp";
+import GlowCard from "./GlowCard";
 
 const steps = [
   {
@@ -30,7 +31,7 @@ const steps = [
 
 function ProfileVisual() {
   return (
-    <div className="zentro-card p-5">
+    <GlowCard className="p-5">
       <div className="flex items-center gap-3 mb-4">
         <div className="w-14 h-14 rounded-full border-2 border-primary/30 flex items-center justify-center">
           <span className="font-display text-primary font-bold text-sm">78%</span>
@@ -45,13 +46,13 @@ function ProfileVisual() {
           <div key={label as string} className={`text-xs font-mono ${done ? "text-success" : "text-text-muted"}`}>{label as string}</div>
         ))}
       </div>
-    </div>
+    </GlowCard>
   );
 }
 
 function FeedbackVisual() {
   return (
-    <div className="zentro-card p-5 space-y-2">
+    <GlowCard className="p-5 space-y-2">
       {[
         ["✅", "Strengths", "Strong market research, clear problem definition", "text-success"],
         ["⚠", "Areas for Improvement", "Technical feasibility section needs work", "text-warning"],
@@ -63,14 +64,14 @@ function FeedbackVisual() {
           {desc && <p className="text-[11px] text-text-muted mt-0.5">{desc}</p>}
         </div>
       ))}
-    </div>
+    </GlowCard>
   );
 }
 
 function ScoreVisual() {
   const { count, ref } = useCountUp(847);
   return (
-    <div className="zentro-card p-5 text-center">
+    <GlowCard className="p-5 text-center">
       <span ref={ref} className="font-mono text-5xl text-accent font-bold">{count}</span>
       <p className="text-text-muted text-xs font-mono mt-2">Innovation Score</p>
       <div className="flex items-center justify-center gap-2 mt-3">
@@ -78,7 +79,7 @@ function ScoreVisual() {
         <span className="text-success text-xs">→</span>
         <span className="text-success text-xs font-bold">Rank #3</span>
       </div>
-    </div>
+    </GlowCard>
   );
 }
 
@@ -120,7 +121,7 @@ export default function HowItWorks() {
                 <div>
                   {step.visual === "profile" && <ProfileVisual />}
                   {step.visual === "challenge" && (
-                    <div className="zentro-card p-5">
+                    <GlowCard className="p-5">
                       <div className="flex flex-wrap gap-2 mb-3">
                         {["Active", "My Department", "AI Recommended"].map((f) => (
                           <span key={f} className="px-2 py-1 rounded text-[10px] font-mono text-primary border border-primary/20 bg-primary/[0.06]">{f}</span>
@@ -131,7 +132,7 @@ export default function HowItWorks() {
                         <p className="text-xs text-text-muted mb-2">⏱ 48 hours · ₹50,000</p>
                         <button className="w-full py-1.5 text-xs font-display font-semibold text-primary-foreground bg-primary rounded-lg animate-shimmer">Submit Idea →</button>
                       </div>
-                    </div>
+                    </GlowCard>
                   )}
                   {step.visual === "feedback" && <FeedbackVisual />}
                   {step.visual === "score" && <ScoreVisual />}

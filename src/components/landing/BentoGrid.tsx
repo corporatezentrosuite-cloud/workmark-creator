@@ -1,5 +1,6 @@
 import { useScrollReveal } from "./useScrollReveal";
 import { useCountUp } from "./useCountUp";
+import GlowCard from "./GlowCard";
 
 const bentoCards = [
   {
@@ -169,7 +170,7 @@ export default function BentoGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {bentoCards.map((card, i) => (
-            <div key={i} className={`zentro-card ${card.accent} ${card.span}`}>
+            <GlowCard key={i} accent={card.accent} wrapperClassName={card.span}>
               <span className={`eyebrow ${card.eyebrowColor} block mb-2`}>{card.eyebrow}</span>
               {card.title && <h3 className="font-display font-bold text-xl md:text-2xl text-foreground mb-2">{card.title}</h3>}
               {card.body && <p className="font-body text-text-secondary text-sm leading-relaxed">{card.body}</p>}
@@ -196,7 +197,7 @@ export default function BentoGrid() {
                   </div>
                 </div>
               )}
-            </div>
+            </GlowCard>
           ))}
         </div>
       </div>

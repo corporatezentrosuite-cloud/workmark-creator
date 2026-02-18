@@ -1,4 +1,5 @@
 import { useScrollReveal } from "./useScrollReveal";
+import GlowCard from "./GlowCard";
 
 const testimonials = [
   {
@@ -33,7 +34,7 @@ export default function Testimonials() {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.map((t) => (
-            <div key={t.name} className="zentro-card p-8 hover:translate-y-0">
+            <GlowCard key={t.name} className="p-8 hover:translate-y-0">
               <span className="font-display text-[72px] leading-none text-primary/[0.15] block mb-2">"</span>
               <p className="font-body font-light italic text-text-secondary text-[17px] leading-[1.8] mb-6">{t.quote}</p>
               <div className="flex items-center gap-3">
@@ -50,7 +51,7 @@ export default function Testimonials() {
                   <span key={i} className="text-warning text-sm">★</span>
                 ))}
               </div>
-            </div>
+            </GlowCard>
           ))}
         </div>
       </div>

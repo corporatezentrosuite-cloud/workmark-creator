@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollReveal } from "./useScrollReveal";
+import GlowCard from "./GlowCard";
 
 export default function Problem() {
   const ref = useScrollReveal();
@@ -32,7 +33,7 @@ export default function Problem() {
         </div>
 
         {/* Right comparison card */}
-        <div className="zentro-card p-8 border-destructive/[0.12]">
+        <GlowCard className="p-8 border-destructive/[0.12]">
           <div className="grid grid-cols-[1fr_auto_1fr] gap-6">
             {/* Resume side */}
             <div className="space-y-3 opacity-50">
@@ -72,7 +73,7 @@ export default function Problem() {
               <span className="inline-flex items-center gap-1 text-xs text-primary">✓ Verified</span>
             </div>
           </div>
-        </div>
+        </GlowCard>
       </div>
     </section>
   );

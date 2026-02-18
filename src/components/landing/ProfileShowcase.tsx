@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useScrollReveal } from "./useScrollReveal";
 import { useCountUp } from "./useCountUp";
 import { motion, AnimatePresence } from "framer-motion";
+import GlowCard from "./GlowCard";
 
 const tabs = [
   { label: "⚡ Innovation Score", key: "score" },
@@ -96,10 +97,10 @@ function CertsTab() {
   return (
     <div className="py-6 grid grid-cols-2 md:grid-cols-3 gap-3">
       {certs.map((c) => (
-        <div key={c.name} className={`zentro-card p-3 border ${c.color}`}>
+        <GlowCard key={c.name} className={`p-3 border ${c.color}`}>
           <p className="text-xs text-foreground font-medium">{c.name}</p>
           <p className="text-[10px] text-text-muted">{c.issuer}</p>
-        </div>
+        </GlowCard>
       ))}
     </div>
   );
@@ -134,7 +135,7 @@ export default function ProfileShowcase() {
           </p>
         </div>
 
-        <div className="zentro-card p-6 md:p-10 max-w-3xl mx-auto">
+        <GlowCard className="p-6 md:p-10 max-w-3xl mx-auto">
           {/* Tab bar */}
           <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide">
             {tabs.map((tab) => (
@@ -164,7 +165,7 @@ export default function ProfileShowcase() {
               <ActiveTab />
             </motion.div>
           </AnimatePresence>
-        </div>
+        </GlowCard>
       </div>
     </section>
   );
